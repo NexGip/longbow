@@ -2,7 +2,7 @@
 import styles from "./Nav.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useUserContext } from "@/app/components/js/Wrapper";
@@ -14,10 +14,18 @@ interface LinkType {
   text: string;
   link: string;
 }
-
+const RefDiv=()=>{
+  const {  setReferredBy } = useUserContext();
+  const searchParams = useSearchParams();
+  const referralID = searchParams.get("referralID");
+  useEffect(() => {
+    if (referralID) setReferredBy(referralID);
+  }, [referralID]);
+  return <></>
+}
 const Nav: React.FC = () => {
   const [show, setShow] = useState<boolean>(false);
-  const { user, setReferredBy } = useUserContext();
+  const { user, } = useUserContext();
 
   const topLinks: LinkType[] = [
     {
@@ -61,11 +69,7 @@ const Nav: React.FC = () => {
       link: "/help",
     },
   ];
-  const searchParams = useSearchParams();
-  const referralID = searchParams.get("referralID");
-  useEffect(() => {
-    if (referralID) setReferredBy(referralID);
-  }, [referralID]);
+
   useEffect(() => {
     const toggleShow = () => {
       const anchor = document.querySelectorAll("a");
@@ -80,7 +84,11 @@ const Nav: React.FC = () => {
   }, []);
 
   return (
+
     <nav className={styles.nav}>
+      <Suspense>
+        <RefDiv/>
+      </Suspense>
    <div className={styles.top}>
 <div className={styles.logoGroup}>
 <Link href={"/"} className={styles.logo}>
@@ -128,6 +136,7 @@ const Nav: React.FC = () => {
         <Ticker theme="dark" />
       </div>
     </nav>
+
   );
 };
 

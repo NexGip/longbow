@@ -10,7 +10,7 @@ const fetchData = async () => {
     return [];
   }
 };
-const revalidate=20;
+export const revalidate=20;
 export default async function Page() {
   const plans = await fetchData();
   const data: TopperType = {

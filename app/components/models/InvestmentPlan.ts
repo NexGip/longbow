@@ -37,11 +37,6 @@ const investmentPlan = new mongoose.Schema<InvestmentPlanResponseType>(
       type: Number,
       required: true,
     },
-
-    share: {
-      type: Boolean,
-      default: false,
-    },
     hidden: {
       type: Boolean,
       default: false,
