@@ -1,0 +1,123 @@
+@import "../../utilities.module";
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg;
+    color: $w;
+    width: 100vw;
+    .top{
+        position: relative;
+        z-index: 10;
+    }
+   
+   .container{
+    >section{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     flex-direction: column;
+     width: 100%;
+     padding: 0 10%;
+     text-align: center;
+     gap: 50px;
+     font-size: 0.9rem;
+     color: colorWithOpacity($w,0.8);
+     &::before{
+        content: "";
+        height: 100vh;
+        width: 100vw;
+        background:linear-gradient(to right,$bg, colorWithOpacity($bg,0.5), $bg), url("../../../public/assets/office.jpg");
+        position: fixed;
+        top: 0;
+        left: 0;
+     }
+     div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+     .grid{
+      
+        width: 100%;
+        gap: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        z-index: 9;
+        .item{
+            width: 40%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            backdrop-filter: blur(8px);
+            background-color: colorWithOpacity($bg,0.6);
+            >div{
+               width: 100%;
+            }
+            .img{
+                z-index: 1;
+                width: 100%;
+                height: 30vh;
+            
+                position: relative;
+                border-radius: 6px ;
+                overflow: hidden;
+               
+                img{
+                    object-fit: cover;
+                }
+            }
+            .text{
+              
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+
+padding: 5%;
+h2{
+    color: transparent;
+    background: $grad;
+    background-clip: text;
+}
+            }
+        }
+      
+     }
+        
+    }
+   }
+}
+
+@media screen and (max-width:800px) {
+    .main{
+    
+       
+       .container{
+        >section{
+         
+            .grid{
+             
+               .item{
+                   flex-direction: column;
+                   width: 100%;
+                   >div{
+                      width: 100%;
+                   }
+                   .img{
+                     
+                       width: 100%;
+                       height: 30vh;
+                   
+                      
+                   }
+               
+               }
+             
+            }
+               
+           }
+       }
+    }  
+}
