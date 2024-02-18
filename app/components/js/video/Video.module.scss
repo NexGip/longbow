@@ -1,0 +1,31 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  width: 100vw;
+  padding: 10vh 5%;
+  background-color: var(--bg);
+color: var(--white);
+  * {
+    margin: 0;
+  }
+  .video {
+    width: 70%;
+    height: 75vh;
+    background-color: var(--s);
+    object-fit: contain;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .main {
+    .video {
+      height: 26vh;
+      width: 100%;
+    }
+  }
+}
