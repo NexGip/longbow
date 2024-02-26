@@ -1,9 +1,35 @@
+@import "../../../../utilities.module";
 .transactions {
   display: flex;
   flex-direction: column;
   gap: 50px;
   width: 100%;
   align-items: flex-start;
+  .totals{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 50px;
+    .total{
+      background: $grad;
+min-height: 150px;
+flex: 1;
+color: $bg !important;
+font-size: 1.5rem !important;
+padding: 24px;
+gap: 10px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+*{
+  margin: 0;
+}
+span{
+  font-size: 1rem !important;
+}
+    }
+  }
   .table {
     display: flex;
     flex-direction: column;
@@ -74,6 +100,20 @@
 @media screen and (max-width: 800px) {
   .transactions {
     padding: 2.5%;
+    .totals{
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px;
+      border: 1px solid $p;
+      .total{
+        min-height: unset;
+        padding: 12px;
+        font-size: 1rem !important;
+        span{
+          font-size: 0.8rem !important;
+        }
+      }
+    }
     .table {
       .controllers {
         flex-wrap: wrap;

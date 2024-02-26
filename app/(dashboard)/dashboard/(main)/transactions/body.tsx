@@ -14,13 +14,16 @@ import Paginate from "@/app/components/js/pager/Paginate";
 import Link from "next/link";
 export const Body: React.FC<{
   transactionz: TransactionResponseType[];
-}> = ({ transactionz }) => {
+  total:{deposits:number;withdrawals:number}
+}> = ({ transactionz,total }) => {
   const context = useUserContext();
   const user = context?.user;
   const [error, setError] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [status, setStatus] = useState<string>("");
   const [type, setType] = useState<string>("");
+  const [deposits, setDeposits] = useState<number>(total.deposits);
+  const [withdrawals, setWithdrawals] = useState<number>(total.withdrawals);
 
   const [transactions, setTransactions] =
     useState<TransactionResponseType[]>(transactionz);
@@ -38,7 +41,19 @@ export const Body: React.FC<{
     {
       !success && showError(setError, message);
     }
-    if (success) setTransactions(data);
+    if (success) {
+      setTransactions(data)
+      let deposits=0;
+      let withdrawals=0;
+      data.forEach((e:TransactionResponseType)=>{
+    if(e.status==1){
+      deposits+=e.type==1?e.amount:0
+      withdrawals+=e.type==0?e.amount:0
+    }
+      });
+      setDeposits(deposits);
+      setWithdrawals(withdrawals)
+    };
   };
   const handleStatus = async (id: string, status: number) => {
     if (!user?.admin) return;
@@ -62,6 +77,7 @@ export const Body: React.FC<{
   return (
     <div className={styles.transactions}>
       <h1>Transactions</h1>
+      
       <div className={styles.table}>
         <div className={styles.controllers}>
           {user?.admin && (
@@ -108,6 +124,16 @@ export const Body: React.FC<{
             <option value="1">Deposit</option>
           </select>
         </div>
+        <div className={styles.totals}>
+      <div className={styles.total}>
+       <p>{deposits.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}</p>
+       <span>Total Deposits</span>
+       </div>
+       <div className={styles.total}>
+       <p>{withdrawals.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2})}</p>
+       <span>Total Withdrawals</span>
+       </div>
+      </div>
         {pageTransactions.map((tran) => (
           <div key={tran._id} className={styles.transaction}>
             <div className={styles.icon}>

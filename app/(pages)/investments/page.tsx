@@ -124,7 +124,7 @@ export default async function Page() {
                   />
                   <ShowText
                     name="Referral Bonus"
-                    value={`${plan.refCommission.toLocaleString("USA")}%`}
+                    value={`${(plan.refCommission*100).toLocaleString("USA")}%`}
                   />
                   <Link
                     href={"/dashboard/invesments/invest"}

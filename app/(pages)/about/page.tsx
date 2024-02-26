@@ -14,14 +14,14 @@ import Listed from "@/app/components/js/listed/listed";
 
 export const metadata: Metadata = {
   title: `About ${COMPANYNAME}`,
-  description: `Amber Trade is a digital platform that facilitates cryptocurrency trading, mining and investment opportunities involving stock exchange, gold trading, real estate and infrastructure for individuals and corporate bodies.`,
+  description: `${COMPANYNAME} is a digital platform that facilitates cryptocurrency trading, mining and investment opportunities involving stock exchange, gold trading, real estate and infrastructure for individuals and corporate bodies.`,
 };
 
 export default function About() {
   const top: TopperType = {
 image:"/assets/images/banner.png",
     text: [
-      `Amber Trade is a digital platform that facilitates cryptocurrency trading, mining and investment opportunities involving stock exchange, gold trading, real estate and infrastructure for individuals and corporate bodies. The platform offers a range of investment plans designed to maximize profits.`,
+      `${COMPANYNAME} is a digital platform that facilitates cryptocurrency trading, mining and investment opportunities involving stock exchange, gold trading, real estate and infrastructure for individuals and corporate bodies. The platform offers a range of investment plans designed to maximize profits.`,
     ],
     title: `About ${COMPANYNAME}`,
   };
@@ -59,25 +59,25 @@ image:"/assets/images/banner.png",
   ];
 
 const history:string[]=[
-  "Since its establishment in 2016 as a subsidiary of the esteemed Amber Group, Amber Trade Limited has consistently expanded its horizons, evolving from its initial focus on forex trading to become a multi-faceted powerhouse in the global financial landscape. With a comprehensive suite of services that now includes gold trading, stock exchange investments, and real estate and infrastructure development, Amber Trade has solidified its position as a leader of diversified investments.",
+  "Since its establishment in 2016, Longbow Investment Limited has consistently expanded its horizons, evolving from its initial focus on forex trading to become a multi-faceted powerhouse in the global financial landscape. With a comprehensive suite of services that now includes gold trading, stock exchange investments, and real estate and infrastructure development, Longbow has solidified its position as a leader of diversified investments.",
   "As we continued to undergo a paradigm shift, we recognized the immense potential of cryptocurrency trading. Leveraging our expertise and experience, we seamlessly transitioned into the realm of digital assets. This pivotal move marked a significant milestone in our journey, propelling us into a dynamic era of innovation and groundbreaking opportunities.",
   "Our foray into gold trading has been marked by a commitment to transparency and strategic foresight, providing clients with unparalleled access to the lucrative and ever-evolving gold market. Simultaneously, our active engagement in the stock exchange has empowered investors with tailored portfolio management strategies, ensuring sustainable financial growth and long-term value creation.",
-  "Our dedication to fostering sustainable communities and driving economic development is reflected in our involvement in real estate and infrastructure projects. Through strategic investments and a focus on innovation, Amber Trade has played a pivotal role in the development of sustainable real estate projects, contributing to the creation of robust infrastructure that serves as a cornerstone for growth and progress in local and international communities. As we continue to expand our diverse portfolio, we remain committed to upholding our values of integrity, excellence, and transformative impact in every sector we operate in.",
-  "As we reflect on our journey so far, we remain steadfast in our dedication to pioneering the future of digital investment. With an unwavering commitment to excellence and a relentless pursuit of innovation, we continue to redefine the boundaries of what's possible in the world of digital finance. Join us on this exciting journey and be a part of the future of crypto with Amber Trade."
+  "Our dedication to fostering sustainable communities and driving economic development is reflected in our involvement in real estate and infrastructure projects. Through strategic investments and a focus on innovation, Longbow has played a pivotal role in the development of sustainable real estate projects, contributing to the creation of robust infrastructure that serves as a cornerstone for growth and progress in local and international communities. As we continue to expand our diverse portfolio, we remain committed to upholding our values of integrity, excellence, and transformative impact in every sector we operate in.",
+  "As we reflect on our journey so far, we remain steadfast in our dedication to pioneering the future of digital investment. With an unwavering commitment to excellence and a relentless pursuit of innovation, we continue to redefine the boundaries of what's possible in the world of digital finance. Join us on this exciting journey and be a part of the future of crypto with Longbow."
 ]
 const subsidiaries:{name:string;text:string;reg:string}[]=[
   {
-name:"Amber Custodian Services Limited",
+name:"Longbow Custodian Services Limited",
 text:`Licensed as a Hong Kong Trust or Company Service Provider (“TCSP”) with the Companies Registry ("CR") in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Ordinance Cap. 615 ("AMLO")`,
 reg:"License No. TC007861"
   },
   {
-name:"Amber Technologies Limited",
+name:"Longbow Technologies Limited",
 text:`Registered with the U.S. Department of Treasury Financial Crimes Enforcement Network (“FinCEN”) as a Money Services Business (“MSB”)`,
 reg:"Registration No. 31000235878123"
   },
   {
-name:"Amber Vault Aus Pty Ltd",
+name:"Longbow Vault Aus Pty Ltd",
 text:`Registered with the Australian Transaction Reports and Analysis Centre ("AUSTRAC") to provide Digital Currency Exchange ("DCE") services in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 ("AML/CTF Act")`,
 reg:"Registration No. 100777501-001"
   },
@@ -87,7 +87,7 @@ text:`Registered with the U.S. Department of Treasury Financial Crimes Enforceme
 reg:"Registration No. 31000204803350"
   },
   {
-name:"Amber Trade Limited",
+name:COMPANYNAME,
 text:`Licensed as a Hong Kong Trust or Company Service Provider (“TCSP”) with the Companies Registry ("CR") in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Ordinance Cap. 615 ("AMLO")`,
 reg:"License No. 2366506"
   },
@@ -97,7 +97,7 @@ text:`Licensed with the Securities and Futures Commission ("SFC") in Hong Kong f
 reg:"License No. ARB697"
   },
   {
-name:"Amber Fintech Switzerland GmbH",
+name:"Longbow Fintech Switzerland GmbH",
 text:`Member of the VQF Self-Regulatory Organization ("VQF SRO") under the Swiss Financial Market Supervisory Authority ("FINMA")`,
 reg:""
   },
@@ -139,10 +139,10 @@ reg:"License No. PS20200502"
           <h2>Our Vision</h2>
           <p>{`Our vision at ${COMPANYNAME} is to be a trailblazing force in the financial industry, setting new standards of excellence through technology-driven insights. We aim to create a seamless, secure, and personalized investment experience for every customer, while fostering financial inclusion and economic growth. By consistently pushing the boundaries of innovation and upholding the highest ethical standards, we aspire to be the catalyst for positive change in the lives of our customers, employees, and communities we serve. `}</p>
           <h3>{`A Promising Future`}</h3>
-          <p>{`Looking ahead, Amber Trade remains steadfast in its mission to empower clients with the financial tools they need to thrive. The company's commitment to innovation, security, and transparency continues to drive its success as it explores new horizons in the ever-evolving world of finance.`}</p>
+          <p>{`Looking ahead, Longbow remains steadfast in its mission to empower clients with the financial tools they need to thrive. The company's commitment to innovation, security, and transparency continues to drive its success as it explores new horizons in the ever-evolving world of finance.`}</p>
         </section>
         <div className={styles.subsidiaries}>
-          <h2>The following licensed/registered entities are fully owned subsidiaries of Amber Group:</h2>
+          <h2>The following licensed/registered entities are fully owned subsidiaries of {COMPANYNAME}:</h2>
 
           <div className={styles.group}>
            {subsidiaries.map((e,i)=>(
