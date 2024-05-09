@@ -144,7 +144,7 @@ export default function About() {
           <h3>{`A Promising Future`}</h3>
           <p>{`Looking ahead, Longbow remains steadfast in its mission to empower clients with the financial tools they need to thrive. The company's commitment to innovation, security, and transparency continues to drive its success as it explores new horizons in the ever-evolving world of finance.`}</p>
         </section>
-        <div className={styles.subsidiaries}>
+        {/* <div className={styles.subsidiaries}>
           <h2>
             The following licensed/registered entities are fully owned
             subsidiaries of {COMPANYNAME}:
@@ -159,7 +159,7 @@ export default function About() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.certs}>
           <div className={styles.cert}>
