@@ -6,7 +6,7 @@
   padding-bottom: 0px;
   font-size: 0.9rem;
   background: $bg;
-  color: colorWithOpacity($w,0.8);
+  color: colorWithOpacity($w, 0.8);
   * {
     margin: 0;
     padding: 0;
@@ -26,7 +26,7 @@
     justify-content: center;
     text-align: center;
   }
-  h2{
+  h2 {
     color: transparent;
     background: $grad;
     background-clip: text;
@@ -40,9 +40,9 @@
     h2 {
       width: 100%;
       display: block;
-      
+
       padding: 12px;
-    
+
       text-align: center;
     }
     div {
@@ -58,7 +58,7 @@
   }
   .subsidiaries {
     flex-direction: column;
-  
+
     align-items: center;
     width: 100%;
     gap: 50px;
@@ -79,19 +79,22 @@
         gap: 10px;
         padding: 5%;
         background: $wgrad;
-        >:first-child{
+        > :first-child {
           font-weight: bold;
         }
 
-       >:last-child{
-        margin-top: 50px;
-       }
+        > :last-child {
+          margin-top: 50px;
+        }
       }
     }
   }
+  .certs {
+    gap: 50px;
+  }
   .cert {
     height: 100vh;
-    width: 100%;
+    flex: 1;
     margin: 5% 0;
     position: relative;
     flex-direction: column;
@@ -158,12 +161,17 @@
         div {
           width: 100%;
           padding: 10%;
-          
         }
       }
     }
+    .certs {
+      flex-direction: column;
+      width: 100%;
+    }
     .cert {
+      flex: unset;
       height: 60vh;
+      width: 100%;
     }
   }
   .main {

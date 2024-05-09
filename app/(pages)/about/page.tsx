@@ -11,6 +11,7 @@ import { COMPANYNAME } from "@/app/components/js/config";
 import { BsLightning } from "react-icons/bs";
 import { FaPeopleGroup } from "react-icons/fa6";
 import Listed from "@/app/components/js/listed/listed";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: `About ${COMPANYNAME}`,
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   const top: TopperType = {
-image:"/assets/images/banner.png",
+    image: "/assets/images/banner.png",
     text: [
       `${COMPANYNAME} is a digital platform that facilitates cryptocurrency trading, mining and investment opportunities involving stock exchange, gold trading, real estate and infrastructure for individuals and corporate bodies. The platform offers a range of investment plans designed to maximize profits.`,
     ],
@@ -58,62 +59,64 @@ image:"/assets/images/banner.png",
     },
   ];
 
-const history:string[]=[
-  "Since its establishment in 2016, Longbow Investment Limited has consistently expanded its horizons, evolving from its initial focus on forex trading to become a multi-faceted powerhouse in the global financial landscape. With a comprehensive suite of services that now includes gold trading, stock exchange investments, and real estate and infrastructure development, Longbow has solidified its position as a leader of diversified investments.",
-  "As we continued to undergo a paradigm shift, we recognized the immense potential of cryptocurrency trading. Leveraging our expertise and experience, we seamlessly transitioned into the realm of digital assets. This pivotal move marked a significant milestone in our journey, propelling us into a dynamic era of innovation and groundbreaking opportunities.",
-  "Our foray into gold trading has been marked by a commitment to transparency and strategic foresight, providing clients with unparalleled access to the lucrative and ever-evolving gold market. Simultaneously, our active engagement in the stock exchange has empowered investors with tailored portfolio management strategies, ensuring sustainable financial growth and long-term value creation.",
-  "Our dedication to fostering sustainable communities and driving economic development is reflected in our involvement in real estate and infrastructure projects. Through strategic investments and a focus on innovation, Longbow has played a pivotal role in the development of sustainable real estate projects, contributing to the creation of robust infrastructure that serves as a cornerstone for growth and progress in local and international communities. As we continue to expand our diverse portfolio, we remain committed to upholding our values of integrity, excellence, and transformative impact in every sector we operate in.",
-  "As we reflect on our journey so far, we remain steadfast in our dedication to pioneering the future of digital investment. With an unwavering commitment to excellence and a relentless pursuit of innovation, we continue to redefine the boundaries of what's possible in the world of digital finance. Join us on this exciting journey and be a part of the future of crypto with Longbow."
-]
-const subsidiaries:{name:string;text:string;reg:string}[]=[
-  {
-name:"Longbow Custodian Services Limited",
-text:`Licensed as a Hong Kong Trust or Company Service Provider (“TCSP”) with the Companies Registry ("CR") in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Ordinance Cap. 615 ("AMLO")`,
-reg:"License No. TC007861"
-  },
-  {
-name:"Longbow Technologies Limited",
-text:`Registered with the U.S. Department of Treasury Financial Crimes Enforcement Network (“FinCEN”) as a Money Services Business (“MSB”)`,
-reg:"Registration No. 31000235878123"
-  },
-  {
-name:"Longbow Vault Aus Pty Ltd",
-text:`Registered with the Australian Transaction Reports and Analysis Centre ("AUSTRAC") to provide Digital Currency Exchange ("DCE") services in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 ("AML/CTF Act")`,
-reg:"Registration No. 100777501-001"
-  },
-  {
-name:"Whalefin Technologies Limited",
-text:`Registered with the U.S. Department of Treasury Financial Crimes Enforcement Network (“FinCEN”) as a Money Services Business (“MSB”)`,
-reg:"Registration No. 31000204803350"
-  },
-  {
-name:COMPANYNAME,
-text:`Licensed as a Hong Kong Trust or Company Service Provider (“TCSP”) with the Companies Registry ("CR") in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Ordinance Cap. 615 ("AMLO")`,
-reg:"License No. 2366506"
-  },
-  {
-name:"Celera Markets Limited",
-text:`Licensed with the Securities and Futures Commission ("SFC") in Hong Kong for Type 1 (Dealing in Securities), Type 4 (Advising on Securities), and Type 9 (Asset Management) regulated activities in accordance with the Securities and Futures Ordinance`,
-reg:"License No. ARB697"
-  },
-  {
-name:"Longbow Fintech Switzerland GmbH",
-text:`Member of the VQF Self-Regulatory Organization ("VQF SRO") under the Swiss Financial Market Supervisory Authority ("FINMA")`,
-reg:""
-  },
-  {
-name:"Sparrow Tech Private Limited",
-text:`Licensed as a Major Payment Institution ("MPI") under the Payment Services Act 2019 to conduct the payment service of "Digital Payment Token Service"`,
-reg:"License No. PS20200502"
-  },
-]
+  const history: string[] = [
+    "Since its establishment in 2016, Longbow Investment Limited has consistently expanded its horizons, evolving from its initial focus on forex trading to become a multi-faceted powerhouse in the global financial landscape. With a comprehensive suite of services that now includes gold trading, stock exchange investments, and real estate and infrastructure development, Longbow has solidified its position as a leader of diversified investments.",
+    "As we continued to undergo a paradigm shift, we recognized the immense potential of cryptocurrency trading. Leveraging our expertise and experience, we seamlessly transitioned into the realm of digital assets. This pivotal move marked a significant milestone in our journey, propelling us into a dynamic era of innovation and groundbreaking opportunities.",
+    "Our foray into gold trading has been marked by a commitment to transparency and strategic foresight, providing clients with unparalleled access to the lucrative and ever-evolving gold market. Simultaneously, our active engagement in the stock exchange has empowered investors with tailored portfolio management strategies, ensuring sustainable financial growth and long-term value creation.",
+    "Our dedication to fostering sustainable communities and driving economic development is reflected in our involvement in real estate and infrastructure projects. Through strategic investments and a focus on innovation, Longbow has played a pivotal role in the development of sustainable real estate projects, contributing to the creation of robust infrastructure that serves as a cornerstone for growth and progress in local and international communities. As we continue to expand our diverse portfolio, we remain committed to upholding our values of integrity, excellence, and transformative impact in every sector we operate in.",
+    "As we reflect on our journey so far, we remain steadfast in our dedication to pioneering the future of digital investment. With an unwavering commitment to excellence and a relentless pursuit of innovation, we continue to redefine the boundaries of what's possible in the world of digital finance. Join us on this exciting journey and be a part of the future of crypto with Longbow.",
+  ];
+  const subsidiaries: { name: string; text: string; reg: string }[] = [
+    {
+      name: "Longbow Custodian Services Limited",
+      text: `Licensed as a Hong Kong Trust or Company Service Provider (“TCSP”) with the Companies Registry ("CR") in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Ordinance Cap. 615 ("AMLO")`,
+      reg: "License No. TC007861",
+    },
+    {
+      name: "Longbow Technologies Limited",
+      text: `Registered with the U.S. Department of Treasury Financial Crimes Enforcement Network (“FinCEN”) as a Money Services Business (“MSB”)`,
+      reg: "Registration No. 31000235878123",
+    },
+    {
+      name: "Longbow Vault Aus Pty Ltd",
+      text: `Registered with the Australian Transaction Reports and Analysis Centre ("AUSTRAC") to provide Digital Currency Exchange ("DCE") services in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 ("AML/CTF Act")`,
+      reg: "Registration No. 100777501-001",
+    },
+    {
+      name: "Whalefin Technologies Limited",
+      text: `Registered with the U.S. Department of Treasury Financial Crimes Enforcement Network (“FinCEN”) as a Money Services Business (“MSB”)`,
+      reg: "Registration No. 31000204803350",
+    },
+    {
+      name: COMPANYNAME,
+      text: `Licensed as a Hong Kong Trust or Company Service Provider (“TCSP”) with the Companies Registry ("CR") in accordance with the Anti-Money Laundering and Counter-Terrorism Financing Ordinance Cap. 615 ("AMLO")`,
+      reg: "License No. 2366506",
+    },
+    {
+      name: "Celera Markets Limited",
+      text: `Licensed with the Securities and Futures Commission ("SFC") in Hong Kong for Type 1 (Dealing in Securities), Type 4 (Advising on Securities), and Type 9 (Asset Management) regulated activities in accordance with the Securities and Futures Ordinance`,
+      reg: "License No. ARB697",
+    },
+    {
+      name: "Longbow Fintech Switzerland GmbH",
+      text: `Member of the VQF Self-Regulatory Organization ("VQF SRO") under the Swiss Financial Market Supervisory Authority ("FINMA")`,
+      reg: "",
+    },
+    {
+      name: "Sparrow Tech Private Limited",
+      text: `Licensed as a Major Payment Institution ("MPI") under the Payment Services Act 2019 to conduct the payment service of "Digital Payment Token Service"`,
+      reg: "License No. PS20200502",
+    },
+  ];
   return (
     <main>
       <Topper data={top} />
       <div className={styles.about}>
         <section>
           <h2>Our History</h2>
-         {history.map((e,i)=><p key={i}>{e}</p>)}
+          {history.map((e, i) => (
+            <p key={i}>{e}</p>
+          ))}
         </section>
         <section>
           <h2>Our Mission</h2>
@@ -142,22 +145,32 @@ reg:"License No. PS20200502"
           <p>{`Looking ahead, Longbow remains steadfast in its mission to empower clients with the financial tools they need to thrive. The company's commitment to innovation, security, and transparency continues to drive its success as it explores new horizons in the ever-evolving world of finance.`}</p>
         </section>
         <div className={styles.subsidiaries}>
-          <h2>The following licensed/registered entities are fully owned subsidiaries of {COMPANYNAME}:</h2>
+          <h2>
+            The following licensed/registered entities are fully owned
+            subsidiaries of {COMPANYNAME}:
+          </h2>
 
           <div className={styles.group}>
-           {subsidiaries.map((e,i)=>(
-            <div key={i}>
-              <p>{e.name}</p>
-              <p>{e.text}</p>
-              <p>{e.reg}</p>
-            </div>
-           ))}
+            {subsidiaries.map((e, i) => (
+              <div key={i}>
+                <p>{e.name}</p>
+                <p>{e.text}</p>
+                <p>{e.reg}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        
+        <div className={styles.certs}>
+          <div className={styles.cert}>
+            <Image src={"/assets/cert.jpg"} fill alt="" />
+          </div>
+          <div className={styles.cert}>
+            <Image src={"/assets/cert2.jpg"} fill alt="" />
+          </div>
+        </div>
       </div>
-      <Listed/>
+      <Listed />
     </main>
   );
 }

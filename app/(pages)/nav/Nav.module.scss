@@ -10,11 +10,11 @@
   flex-direction: column;
   color: $w;
   padding-top: 12px;
-  &::after{
+  &::after {
     content: "";
     height: 12px;
     width: 100%;
-    background: linear-gradient(to right, $bg,colorWithOpacity($p,0.4) , $bg);
+    background: linear-gradient(to right, $bg, colorWithOpacity($p, 0.4), $bg);
     position: absolute;
     top: 0;
     left: 0;
@@ -25,7 +25,7 @@
     align-items: center;
     justify-content: center;
   }
-  a{
+  a {
     display: flex;
     justify-content: center;
     height: 50px;
@@ -33,21 +33,18 @@
     padding: 0 24px;
     border: 2px solid $p;
     transition: 0.75s;
+    font-size: 0.85rem;
     &:hover {
       background-color: $p;
-      box-shadow: inset 8px 8px 16px colorWithOpacity($pd,0.8);
-    color: $bg;
-
-    
+      box-shadow: inset 8px 8px 16px colorWithOpacity($pd, 0.8);
+      color: $bg;
     }
- 
   }
 
   .top {
     width: 100%;
     justify-content: space-between;
     height: 150px;
- 
 
     .logoGroup {
       width: 20%;
@@ -55,9 +52,9 @@
       height: 100%;
       padding: 12px 6px;
 
- &:hover{
-  @include animate(shake, 1s, linear, 0s, 1)
- }
+      &:hover {
+        @include animate(shake, 1s, linear, 0s, 1);
+      }
 
       .logo {
         position: relative;
@@ -65,9 +62,8 @@
         background-color: transparent;
         width: 100%;
         height: 100%;
-        &:hover{
+        &:hover {
           box-shadow: none;
-         
         }
         img {
           width: 100%;
@@ -80,69 +76,65 @@
       }
     }
     .links {
-     
       width: 80%;
       flex-direction: column;
-     height: 100%;
+      height: 100%;
       a {
         border-radius: 24px;
       }
 
-     .linkTop{
-      width: 100%;
-      gap: 15px;
-      justify-content: flex-end;
-      padding:6px 5% ;
-      height: 50%;
-      .trans {
-        color: $p;
-        font-size: 2rem;
-        height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-   
-        padding:10px 24px 0px;
-margin: 0;
-        
-      }
-      >:nth-child(2){
-        background: $grad;
-        color: $bg;
-        border: none;
-            }
-     }
-     .center {
-      width: 100%;
-      height: 50%;
-      border-radius: 6px 0px 0 0;
-      padding:6px 5%;
-      background-color: colorWithOpacity($w,0.1);
-     
-      .upper {
+      .linkTop {
         width: 100%;
-        justify-content: space-between;
-       text-align: center;
-       gap: 15px;
-        a {
+        gap: 15px;
+        justify-content: flex-end;
+        padding: 6px 5%;
+        height: 50%;
+        .trans {
+          color: $p;
+          font-size: 2rem;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          padding: 10px 24px 0px;
+          margin: 0;
+        }
+        > :nth-child(2) {
+          background: $grad;
+          color: $bg;
           border: none;
-       
-          border-radius: 6px;
-          flex: 1;
-          background-color: $bg;
-          color: $pd;
-          &:hover {
-            color: $bg;
-            background-color: $p;
-   
-         
+        }
+      }
+      .center {
+        width: 100%;
+        height: 50%;
+        border-radius: 6px 0px 0 0;
+        padding: 6px 5%;
+        background-color: colorWithOpacity($w, 0.1);
+
+        .upper {
+          width: 100%;
+          justify-content: space-between;
+          text-align: center;
+          gap: 15px;
+          a {
+            border: none;
+
+            border-radius: 6px;
+            flex: 1;
+            background-color: $bg;
+            color: $pd;
+            &:hover {
+              color: $bg;
+              background-color: $p;
+            }
           }
         }
       }
     }
-    }
   }
- 
+
   .bottom {
     width: 100%;
     height: 50px;
@@ -156,7 +148,6 @@ margin: 0;
 
 @media screen and (max-width: 800px) {
   .nav {
-  
     a {
       display: flex;
       justify-content: center;
@@ -168,112 +159,99 @@ margin: 0;
       transition: 0.75s;
       &:hover {
         background-color: transparent;
-     
       }
     }
 
     .top {
-    
       height: unset;
-flex-direction: column;
-gap: 6px;
-z-index: 6;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 6;
 
-  
       .logoGroup {
-       width: 100%;
-       height: 90px;
-       background-color: $bg;
-  justify-content: space-between;
-  padding: 0 5%;
+        width: 100%;
+        height: 90px;
+        background-color: $bg;
+        justify-content: space-between;
+        padding: 0 5%;
         .logo {
           width: 30%;
           height: 100%;
-        
-      
         }
         .menuIcon {
-         display: flex;
-         font-size: 2rem;
-         color: $p;
+          display: flex;
+          font-size: 2rem;
+          color: $p;
         }
       }
       .links {
-       
         width: 100%;
-       height: 60px;
+        height: 60px;
 
         a {
           border-radius: 24px;
         }
-  
-       .linkTop{
-        width: 100%;
-        gap: 15px;
-        justify-content: space-between;
-        padding:6px 5% ;
-        height: 100%;
-        background-color: colorWithOpacity($w,0.1);
-        .trans {
-       
-          height: 100%;
-          
-          
-        }
-        >*{
-          flex: 1;
-          height: 100%;
-          background-color: $bg;
-          border-radius: 6px;
-        
-        }
-        .trans{
-          padding: 0;
-        }
-        
-       }
-       .center {
-       position: absolute;
-       top: 100%;
-        width: 100%;
-        height: unset;
 
-        border-radius: 0;
-        padding:10%;
-        background-color: colorWithOpacity($bg,0.8);
-        transition: 0.75s;
-        z-index: -1;
-        backdrop-filter: blur(12px);
-        .upper {
+        .linkTop {
           width: 100%;
-          
-         text-align: center;
-         gap: 15px;
-         flex-direction: column;
-          a {
-            border: none;
-         
+          gap: 15px;
+          justify-content: space-between;
+          padding: 6px 5%;
+          height: 100%;
+          background-color: colorWithOpacity($w, 0.1);
+          .trans {
+            height: 100%;
+          }
+          > * {
+            flex: 1;
+            height: 100%;
+            background-color: $bg;
             border-radius: 6px;
-            flex: unset;
+          }
+          .trans {
+            padding: 0;
+          }
+        }
+        .center {
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          height: unset;
+
+          border-radius: 0;
+          padding: 10%;
+          background-color: colorWithOpacity($bg, 0.8);
+          transition: 0.75s;
+          z-index: -1;
+          backdrop-filter: blur(12px);
+          .upper {
             width: 100%;
-          background-color: transparent;
-        
-            padding: 6px;
-            &:hover {
-              color: $w;
+
+            text-align: center;
+            gap: 15px;
+            flex-direction: column;
+            a {
+              border: none;
+
+              border-radius: 6px;
+              flex: unset;
+              width: 100%;
               background-color: transparent;
-     
-           
+
+              padding: 6px;
+              &:hover {
+                color: $w;
+                background-color: transparent;
+              }
             }
           }
         }
-      }
-      .hide {
-        top: -100vh;
-      }
+        .hide {
+          top: -100vh;
+        }
       }
     }
-   
+
     .bottom {
       position: fixed;
       bottom: 2.5px;
