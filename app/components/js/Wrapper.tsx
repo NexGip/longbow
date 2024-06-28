@@ -101,12 +101,23 @@ export default function Wrap({ children }: Props) {
         {children}
       </UserContext.Provider>
 
-      <Script
+      {/* <Script
         type="text/javascript"
         id={"zsiqchat"}
         src="//code.tidio.co/089emfbzzauorm8ycjgm5aayaqohbexw.js"
-      /> 
- 
+      />  */}
+      <Script id="ae12273fee5f8">
+        {`
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = 'ae12273fee5f8531993adaad47cc8d5e83f95600';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+        `}
+      </Script>
     </div>
   );
 }
